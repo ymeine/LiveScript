@@ -36,7 +36,7 @@ command-eq '-cpb --no-header test/data/empty.ls', [
 
 # not using bare
 command-eq '-cp --no-header test/data/empty.ls', [
-    '(function(){\n\n}).call(this);'
+    '(async function(){\n\n}).call(this);'
 ]
 
 # json

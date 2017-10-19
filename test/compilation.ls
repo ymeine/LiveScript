@@ -14,7 +14,8 @@ eq '_(__);', bare '\n\t_\t__\t\n'
 
 
 # `{\eval}` forces the last value to be returned.
-eq 1, Function('return ' + LiveScript.compile 'delete @1' {\eval,-header}).call {1}
+Function('return ' + LiveScript.compile 'delete @1' {\eval,-header}).call {1}
+.then (value) -> eq 1, value
 eq '''
 var ref$;
 ref$ = o.k, delete o.k, ref$;
