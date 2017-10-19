@@ -49,9 +49,10 @@ module.exports = optionator do
           description: 'print/compile as JSON'
         * option: 'nodejs'
           alias: 'n'
-          type: 'Boolean'
+          # type: 'Boolean'
+          type: 'String'
           description: 'pass options after this through to the \'node\' binary'
-          rest-positional: true
+          # rest-positional: true
         * option: 'watch'
           alias: 'w'
           type: 'Boolean'

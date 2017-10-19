@@ -345,7 +345,8 @@ function output-filename filename, json
 !function fork-node
   [, ...args] = process.argv
 
-  [ls-args, [, ...node-args]] = break-list (in <[ --nodejs -n ]>), args
+  # [ls-args, [, ...node-args]] = break-list (in <[ --nodejs -n ]>), args
+  [ls-args, [flag, node-args, other]] = break-list (in <[ --nodejs -n ]>), args
 
   require 'child_process' .spawn do
     process.exec-path
