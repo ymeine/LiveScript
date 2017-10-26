@@ -127,7 +127,7 @@ switch
     if run
       LiveScript.emit 'compile' t
       print = json or o.print
-      t.output = LiveScript.compile t.input, {...options, +bare, run, print}
+      t.output = LiveScript.compile t.input, {...options, -bare, run, print}
       LiveScript.emit 'run' t
       require 'source-map-support' .install {+hook-require}
       t.result = LiveScript.run (if o.map is 'none' then t.output else t.output.code), options, do
