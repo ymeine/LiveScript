@@ -21,9 +21,16 @@ module.exports = !(LiveScript) ->
         if context
             global.__run-context = context
             code = "return (function() {\n#code\n}).call(global.__runContext);"
+        # else
+        #     code = "return #code"
         filename += '(js)'
         try
-            main._compile code, filename
+            # console.log filename
+            # console.log code
+            # console.log '-' * 80
+            result = main._compile code, filename
+            # console.log result
+            result
         catch
             throw hack-trace e, code, filename
 

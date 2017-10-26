@@ -476,7 +476,7 @@ class exports.Block extends Node
             if bare then @lines.push Parens @lines.pop! else @make-return!
         code = [(@compile-with-declarations o)]
         # Wrap everything in a safety closure unless requested not to.
-        bare or code = ["(async function(){\n", ...code, "\n}).call(this);\n"]
+        bare or code = ["return (async function(){\n", ...code, "\n}).call(this);\n"]
         result = sn(null, prefix || [], ...code)
 
     # Compile to a function body.

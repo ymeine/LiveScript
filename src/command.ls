@@ -128,14 +128,16 @@ switch
       LiveScript.emit 'compile' t
       print = json or o.print
       t.output = LiveScript.compile t.input, {...options, -bare, run, print}
+      # t.output = LiveScript.compile t.input, {...options, +bare, run, print}
       LiveScript.emit 'run' t
       require 'source-map-support' .install {+hook-require}
       t.result = LiveScript.run (if o.map is 'none' then t.output else t.output.code), options, do
           js: true
           context: o.run-context
-      switch
-      | json  => say JSON.stringify t.result, null, 2
-      | o.print => say t.result
+      t.result.then (value) ->
+        switch
+        | json  => say JSON.stringify value, null, 2
+        | o.print => say value
       throw
 
     LiveScript.emit 'compile' t

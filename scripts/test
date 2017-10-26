@@ -168,6 +168,7 @@
     files.splice(files.indexOf("async.ls"), 1);
   }
 
+  // files = ['cli.ls'];
   files.forEach(function(file){
     var stk, msg, m, ref, num, row, col, that, lines, line;
 
