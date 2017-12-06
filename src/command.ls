@@ -10,7 +10,7 @@ require! {
 
 version = LiveScript.VERSION
 
-args, {say, say-with-timestamp, warn, die} = {} <-! (module.exports =)
+{args, require:require_}, {say, say-with-timestamp, warn, die} = {} <-! (module.exports =)
 
 say ?= console.log
 say-with-timestamp ?= util.log
@@ -133,6 +133,7 @@ switch
       t.result = LiveScript.run (if o.map is 'none' then t.output else t.output.code), options, do
           js: true
           context: o.run-context
+          require: require_
       switch
       | json  => say JSON.stringify t.result, null, 2
       | o.print => say t.result

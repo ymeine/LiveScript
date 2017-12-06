@@ -2,7 +2,7 @@ default: all
 
 SRC = $(shell find src -name "*.ls" -type f | sort)
 LIB = $(SRC:src/%.ls=lib/%.js) lib/parser.js
-LSC = bin/lsc
+LSC = node_modules/.bin/lsc
 BROWSERIFY = node_modules/.bin/browserify
 UGLIFYJS = node_modules/.bin/uglifyjs
 ISTANBUL = node_modules/.bin/istanbul

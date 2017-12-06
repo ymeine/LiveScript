@@ -49,6 +49,7 @@ dependencies:
   optionator: '~0.8.1'
   'source-map': '^0.5.6'
   'source-map-support': '^0.4.11'
+  'livescript': '1.5'
 
 dev-dependencies:
   jison: '0.4.17'

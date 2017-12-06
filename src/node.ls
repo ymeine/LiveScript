@@ -6,7 +6,7 @@
 module.exports = !(LiveScript) ->
     require! [fs, path, events]
 
-    LiveScript.run = (code, {filename}:options?, {js, context} = {}) ->
+    LiveScript.run = (code, {filename}:options?, {js, context, require} = {}) ->
         {main} = require
         # Hack for relative `require`.
         dirname = if filename
