@@ -34,7 +34,7 @@ module.exports = !(LiveScript) ->
         js = if '.json.ls' is filename.substr -8
             'module.exports = ' + LiveScript.compile file, {filename, +json}
         else
-            LiveScript.compile file, {filename, +bare, map: "embedded"} .code
+            LiveScript.compile file, {filename, -bare, map: "embedded"} .code
         try
             module._compile js, filename
         catch
